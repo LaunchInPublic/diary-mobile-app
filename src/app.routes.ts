@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ScreenName } from "ScreenName";
+
+import { ScreenName } from "./types/navigation.type";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
