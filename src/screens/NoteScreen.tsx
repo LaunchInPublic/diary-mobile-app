@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ScreenName } from "./navigation.type";
+import { ScreenName } from "../types/navigation.type";
 
 type RootStackParamList = {
   [ScreenName.NOTE]: { note: { title: string; description: string } };
