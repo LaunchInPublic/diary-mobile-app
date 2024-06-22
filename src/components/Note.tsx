@@ -1,14 +1,30 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
 type Note = {
   id: string;
   title: string;
   content: string;
 };
 
-const Note = ({ note }: { note: Note }) => {
+export const Note = ({ note }: { note: Note }) => {
   return (
-    <div className="note">
-      <h3>{note.title}</h3>
-      <p>{note.content}</p>
-    </div>
+    <View style={styles.note}>
+      <Text style={styles.title}>{note.title}</Text>
+      <Text style={styles.content}>{note.content}</Text>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  note: {
+    padding: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  content: {
+    fontSize: 14,
+  },
+});

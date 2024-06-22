@@ -1,7 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ScreenName } from "./navigation.type";
 
-const NoteScreen = ({ navigation, route }) => {
+type RootStackParamList = {
+  [ScreenName.NOTE]: { note: { title: string; description: string } };
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, ScreenName.NOTE>;
+
+export const NoteScreen: React.FC<Props> = ({ route }) => {
     const { note } = route.params;
 
     return (
@@ -14,13 +22,13 @@ const NoteScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1;
+        flex: 1,
     },
     title: {
-        font-size: 14px;
-        font-weight: bold;
+        fontSize: 14,
+        fontWeight: 'bold',
     },
     description: {
-        font-size: 12px;
+        fontSize: 12,
     },
 });
