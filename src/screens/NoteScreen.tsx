@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import Markdown from "markdown-to-jsx";
+
 import { ScreenName } from "../types/navigation.type";
 
 type RootStackParamList = {
@@ -15,7 +17,7 @@ export const NoteScreen: React.FC<Props> = ({ route }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{note.title}</Text>
-            <Text style={styles.description}>{note.description}</Text>
+            <Markdown style={styles.description}>{note.description}</Markdown>
         </View>
     );
 }
